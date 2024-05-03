@@ -19,3 +19,9 @@ export const cities = {
   Andijon: "Andijon sh.",
   Jizzax: "Jizzax sh.",
 };
+
+export const statusMeetings = {
+  faol: "Jadval bo'yicha faol",
+  kutilmoqda: "Ishga tushirish kutilmoqda",
+  tugallangan: "Tugallangan (arxivlangan)",
+};

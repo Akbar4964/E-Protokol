@@ -12,9 +12,9 @@ function PublicRoute({ children }) {
   const authRole = authUser.user.position;
 
   if (authUser.isLogged && authUser.user)
-    if (authRole === userMeetingOrganRoles.USER) {
-      if (!pathname.includes(routes.USER)) {
-        return <Navigate to={routes.USER} replace />;
+    if (authRole === userMeetingOrganRoles.OFFERED) {
+      if (!pathname.includes(routes.ATTEND_USER)) {
+        return <Navigate to={routes.ATTEND_USER} replace />;
       }
     }
 
@@ -24,9 +24,15 @@ function PublicRoute({ children }) {
     }
   }
 
+  if (authRole === userMeetingOrganRoles.USER) {
+    if (!pathname.includes(routes.ATTEND_USER)) {
+      return <Navigate to={routes.ATTEND_USER} replace />;
+    }
+  }
+
   if (authRole === userMeetingOrganRoles.CHAIRMAN) {
-    if (!pathname.includes(routes.ATTENDCHAIRMAN)) {
-      return <Navigate to={routes.ATTENDCHAIRMAN} replace />;
+    if (!pathname.includes(routes.ATTEND_USER)) {
+      return <Navigate to={routes.ATTEND_USER} replace />;
     }
   }
   return children;

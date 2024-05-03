@@ -65,7 +65,7 @@ function AddMeetType({ users }) {
               <p className="homepage">Yig'ilish turlari</p>
             </NavLink>
             <img src={MeetingsTypePageArrowImg} alt="" />
-            <NavLink to={routes.CREATEMEETINGTYPE}>
+            <NavLink to={routes.CREATE_MEETINGTYPE}>
               <p className="meetingspage">Yig'ilish turini yaratish</p>
             </NavLink>
           </div>

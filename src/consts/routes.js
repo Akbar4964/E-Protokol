@@ -9,15 +9,15 @@ export const routes = {
   USERS: "/admin/users",
   CREATEUSER: "/admin/users/create",
   MEETINGTYPE: "/admin/meetingtypes",
-  CREATEMEETINGTYPE: "/admin/meetingtypes/create",
+  CREATE_MEETINGTYPE: "/admin/meetingtypes/create",
+  //
   ATTEND: "/admin/attend",
-  ARCHIVEMEETINGS: "/admin/archivemeetings",
-  ACTIVEMEETINGS: "/admin/attend/activemeetings",
-  ACTIVEMEETINGDETAILS: "/admin/attend/activemeetings/details",
-  // chairman
-  CHAIRMAN: "/chairman",
-  ATTENDCHAIRMAN: "/chairman/attend",
-  ARCHIVEMEETINGSCHAIRMAN: "/chairman/archivemeetings",
-  ACTIVEMEETINGSCHAIRMAN: "/chairman/attend/activemeetings",
-  ACTIVEMEETINGDETAILSCHAIRMAN: "/chairman/attend/activemeetings/details",
+  ARCHIVE_MEETINGS: "/admin/archivemeetings",
+  ACTIVE_MEETINGS: "/admin/attend/activemeetings",
+  ACTIVE_MEETING_DETAILS: "/admin/attend/activemeetings/details",
+  //
+  ATTEND_USER: "/user/attend",
+  USER_ARCHIVE_MEETINGS: "/user/archivemeetings",
+  USER_ACTIVE_MEETINGS: "/user/attend/activemeetings",
+  USER_ACTIVE_MEETING_DETAILS: "/user/attend/activemeetings/details",
 };

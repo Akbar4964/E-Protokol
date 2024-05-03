@@ -5,12 +5,12 @@ import CreateMeeting from "../pages/create-meeting";
 import CreateMeetingType from "../pages/create-meeting-type";
 import CreateUser from "../pages/create-user";
 import EditMeeting from "../pages/edit-meeting";
-import MeetingMatter from "../pages/meeting-matter";
 import Meeting from "../pages/meetings";
 import TypeMeetings from "../pages/meetings-type";
 import CorporativeSecretary from "../pages/secretary-corporative";
 import Home from "../pages/home";
 import Users from "../pages/users";
+import ActiveMeetingsDetails from "../pages/active-meetings-details";
 
 export const publicRoutes = [{ path: routes.HOME, page: Home }];
 
@@ -22,18 +22,18 @@ export const privateRoutes = [
   { path: routes.USERS, page: Users },
   { path: routes.CREATEUSER, page: CreateUser },
   { path: routes.MEETINGTYPE, page: TypeMeetings },
-  { path: routes.CREATEMEETINGTYPE, page: CreateMeetingType },
+  { path: routes.CREATE_MEETINGTYPE, page: CreateMeetingType },
   { path: routes.ATTEND, page: CorporativeSecretary },
-  { path: routes.ATTENDCHAIRMAN, page: CorporativeSecretary },
-  { path: routes.ACTIVEMEETINGS + "/:forename/:id/", page: ActiveMeetings },
+  { path: routes.ACTIVE_MEETINGS + "/:id/", page: ActiveMeetings },
+  { path: routes.ATTEND_USER, page: CorporativeSecretary },
+  { path: routes.USER_ACTIVE_MEETINGS + "/:id/", page: ActiveMeetings },
   {
-    path: routes.ACTIVEMEETINGDETAILS + "/:id/",
-    page: MeetingMatter,
+    path: routes.ACTIVE_MEETING_DETAILS + "/:id/",
+    page: ActiveMeetingsDetails,
   },
-  { path: routes.ACTIVEMEETINGSCHAIRMAN + "/:forename/:id/", page: ActiveMeetings },
   {
-    path: routes.ACTIVEMEETINGDETAILSCHAIRMAN + "/:id/",
-    page: MeetingMatter,
+    path: routes.USER_ACTIVE_MEETING_DETAILS + "/:id/",
+    page: ActiveMeetingsDetails,
   },
   { path: routes.USER, page: "" },
 ];

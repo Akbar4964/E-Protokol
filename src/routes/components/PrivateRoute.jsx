@@ -23,16 +23,25 @@ function PrivateRoute({ children }) {
   }
 
   if (
-    !pathname.includes(routes.USER) &&
+    !pathname.includes(routes.ATTEND_USER) &&
+    authRole === userMeetingOrganRoles.USER &&
+    userMeetingOrganRoles.OFFERED
+  ) {
+    return <Navigate to={routes.ATTEND_USER} replace />;
+  }
+
+  if (
+    !pathname.includes(routes.ATTEND_USER) &&
     authRole === userMeetingOrganRoles.USER
   ) {
-    return <Navigate to={routes.USER} replace />;
+    return <Navigate to={routes.ATTEND_USER} replace />;
   }
+
   if (
-    !pathname.includes(routes.ATTENDCHAIRMAN) &&
+    !pathname.includes(routes.ATTEND_USER) &&
     authRole === userMeetingOrganRoles.CHAIRMAN
   ) {
-    return <Navigate to={routes.ATTENDCHAIRMAN} replace />;
+    return <Navigate to={routes.ATTEND_USER} replace />;
   }
   return children;
 }

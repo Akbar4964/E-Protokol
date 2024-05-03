@@ -9,25 +9,38 @@ import Spinner from "../consts/Spinner";
 function ActiveMeetings() {
   const params = useParams();
 
-  const { error, data:fadsljkfadsh, isLoading, refetch } = useQuery({
+  const {
+    error: firstError,
+    data: fadsljkfadsh,
+    isLoading: firstLoading,
+    refetch: firstRefetch,
+  } = useQuery({
     queryKey: [queryKeys.getMeetingsKey],
     queryFn: () => API.getMeetings(),
   });
 
-  console.log(params);
-  if (isLoading) return <Spinner />;
-  if (error){
-    console.error("An error has occured: " + error.message)
-    return null
+  const {
+    error: secondError,
+    data: organForeName,
+    isLoading: secondLoading,
+    refetch: secondRefetch,
+  } = useQuery({
+    queryKey: [queryKeys.getMeetingsOrganById],
+    queryFn: () => API.getMeetingsOrganById(params.id),
+  });
+  if (firstLoading) return <Spinner />;
+  if (firstError) {
+    console.error("An error has occured: " + firstError.message);
+    return null;
   }
 
   return (
     <>
       <ActiveOrganMeeting
         organId={params.id}
-        organForeName={params.forename}
         meetings={fadsljkfadsh}
-        render={refetch}
+        render={firstRefetch}
+        organForeName={organForeName}
       />
     </>
   );

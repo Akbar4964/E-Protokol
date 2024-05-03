@@ -96,7 +96,7 @@ function MeetingType({ meetingsOrgan, refetch }) {
               />
             </div>
             <div className="create">
-              <NavLink to={routes.CREATEMEETINGTYPE}>
+              <NavLink to={routes.CREATE_MEETINGTYPE}>
                 <button>Yig'ilish turini yaratish</button>
               </NavLink>
             </div>
